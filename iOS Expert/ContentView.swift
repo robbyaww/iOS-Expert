@@ -1,24 +1,26 @@
-//
-//  ContentView.swift
-//  iOS Expert
-//
-//  Created by Robby Awalul on 27/03/26.
-//
-
 import SwiftUI
+
+// MARK: - Main Tab View
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            Tab("Dashboard", systemImage: "house.fill") {
+                DashboardView()
+            }
+
+            Tab("Curriculum", systemImage: "book.fill") {
+                CurriculumView()
+            }
+
+            Tab("Interview", systemImage: "star.fill") {
+                InterviewView()
+            }
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .environment(LearningProgress())
 }

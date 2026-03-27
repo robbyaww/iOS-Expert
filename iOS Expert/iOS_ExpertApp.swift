@@ -1,17 +1,13 @@
-//
-//  iOS_ExpertApp.swift
-//  iOS Expert
-//
-//  Created by Robby Awalul on 27/03/26.
-//
-
 import SwiftUI
 
 @main
 struct iOS_ExpertApp: App {
+    @State private var progress = LearningProgress()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(progress)
         }
     }
 }
